@@ -11,17 +11,77 @@
     <h1>Mundo Animal</h1>
     <nav>
       <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="sobre">
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
       <h2>Sobre o Mundo Animal</h2>
       <p>O Mundo Animal é um espaço dedicado à exploração da incrível diversidade de espécies que habitam nosso planeta. Aqui, você pode aprender sobre os diferentes habitats, comportamentos e curiosidades do reino animal, com foco em conservação e educação ambiental.</p>
+      <p>Nosso objetivo é promover uma maior compreensão sobre os animais, incentivar a preservação de espécies e habitats e sensibilizar as pessoas sobre a importância da biodiversidade para o equilíbrio do planeta.</p>
+    </section>
+
+    <!-- Seção das Abas -->
+    <section class="abas">
+      <h2>Explore Mais Sobre o Mundo Animal</h2>
+      <div class="tabs">
+        <button class="tab-button" onclick="showTab('mamiferos')">Mamíferos</button>
+        <button class="tab-button" onclick="showTab('aves')">Aves</button>
+        <button class="tab-button" onclick="showTab('reptéis')">Répteis</button>
+      </div>
+
+      <div id="mamiferos" class="tab-content">
+        <h3>Mamíferos</h3>
+        <p>Os mamíferos são uma classe de animais que possuem pelos, dão à luz a filhotes vivos e, na maioria dos casos, alimentam seus filhotes com leite. Exemplos incluem leões, elefantes, baleias e humanos.</p>
+        <ul>
+          <li><strong>Leões:</strong> São conhecidos como os "reis da selva" e vivem em grandes grupos chamados de "alcateias".</li>
+          <li><strong>Elefantes:</strong> São os maiores mamíferos terrestres e possuem uma memória extraordinária.</li>
+          <li><strong>Baleias:</strong> Alguns tipos de baleias, como a baleia azul, são os maiores animais do planeta.</li>
+        </ul>
+      </div>
+
+      <div id="aves" class="tab-content" style="display: none;">
+        <h3>Aves</h3>
+        <p>As aves são animais vertebrados caracterizados pela presença de penas, bico e ovos com casca. Elas são encontradas em quase todos os habitats do planeta e desempenham papéis vitais na natureza, como polinização e controle de pragas.</p>
+        <ul>
+          <li><strong>Águias:</strong> São aves de rapina com uma visão extraordinária e podem caçar presas a grandes altitudes.</li>
+          <li><strong>Pinguins:</strong> Adaptados ao frio, eles são encontrados nas regiões polares e têm uma habilidade incrível para nadar.</li>
+          <li><strong>Beija-flores:</strong> Conhecidos por sua capacidade de voar para trás, esses pequenos pássaros são importantes polinizadores.</li>
+        </ul>
+      </div>
+
+      <div id="reptéis" class="tab-content" style="display: none;">
+        <h3>Répteis</h3>
+        <p>Os répteis são uma classe de animais vertebrados, geralmente cobertos por escamas, que podem viver em ambientes aquáticos e terrestres. Eles incluem cobras, lagartos, crocodilos e tartarugas.</p>
+        <ul>
+          <li><strong>Cobras:</strong> Algumas cobras, como a píton, são constritoras, enquanto outras, como a cascavel, são venenosas.</li>
+          <li><strong>Crocodilos:</strong> Os crocodilos são predadores poderosos que habitam rios e pântanos e podem viver por muitos anos.</li>
+          <li><strong>Tartarugas:</strong> Podem viver tanto em terra quanto em água, e algumas espécies são conhecidas por sua longevidade.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="contato">
+      <h2>Entre em Contato</h2>
+      <p>Tem alguma dúvida ou sugestão? Estamos sempre abertos para ouvir você!</p>
+      <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <br>
+        <button type="submit">Enviar</button>
+      </form>
     </section>
 
     <section class="conteudo">
@@ -33,5 +93,19 @@
   <footer>
     <p>&copy; 2025 Mundo Animal. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    function showTab(tabId) {
+      // Esconde todos os conteúdos das abas
+      var tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(function(tab) {
+        tab.style.display = 'none';
+      });
+
+      // Mostra a aba selecionada
+      var selectedTab = document.getElementById(tabId);
+      selectedTab.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
